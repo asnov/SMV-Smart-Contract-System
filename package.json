@@ -1,0 +1,17 @@
+{
+  "name": "smv-sc",
+  "version": "0.0.1",
+  "description": "Free TON DGO SMV Smart Contract System (contest submission)",
+  "main": "index.js",
+  "repository": "https://github.com/asnov/SMV-Smart-Contract-System.git",
+  "author": "Alex&Team @anovi",
+  "license": "GPL-3.0",
+  "scripts": {
+    "pretest": "tsc tests/example.test.ts",
+    "test": "echpochmak-cli test -p ./tests/example.test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "echpochmak": "^0.2.13"
+  }
+}
