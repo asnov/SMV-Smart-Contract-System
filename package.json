@@ -12,6 +12,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "echpochmak": "^0.2.13"
+    "echpochmak": "^0.2.13",
+    "ton-client-js": "^0.28.1",
+    "ton-client-node-js": "^0.28.0"
   }
 }

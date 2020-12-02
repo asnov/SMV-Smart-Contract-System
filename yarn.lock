@@ -4625,6 +4625,15 @@ ton-client-node-js@^0.27.0:
     ton-client-js "^0"
     websocket "^1.0.28"
 
+ton-client-node-js@^0.28.0:
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/ton-client-node-js/-/ton-client-node-js-0.28.0.tgz#ccebb069c9bc4a00a148ebe991eba380e41b4c9f"
+  integrity sha512-crWioYLPOtGDVkHiz+wlFcvsDrbYcoRQXf59X8NLtaqXP4fbimo+qd6aK5nOrBeclEJ58yetD/FggkJqHqId2g==
+  dependencies:
+    node-fetch "^2.6.0"
+    ton-client-js "^0"
+    websocket "^1.0.28"
+
 tough-cookie@^2.3.3, tough-cookie@~2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.5.0.tgz#cd9fb2a0aa1d5a12b473bd9fb96fa3dcff65ade2"
