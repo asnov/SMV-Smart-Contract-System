@@ -1,6 +1,3 @@
-// import { assertError } from 'echpochmak/build/main/Asserts/AssertError';
-// import { Manager } from 'echpochmak/build/main/Manager/Manager';
-
 import { Manager } from 'echpochmak/build/Manager/Manager';
 import { assertError } from 'echpochmak/build/Asserts/AssertError';
 
@@ -11,7 +8,11 @@ describe('Asserts', () => {
         // @ts-ignore
         await restart();
         manager = new Manager();
-        await manager.createClient(['http://localhost:8080/']);
+
+        console.log(`starting manager.createClient()...`);
+        await manager.createClient(['http://localhost:8080']);
+        console.log(`manager.createClient() finished.`);
+
         await manager.loadContract(
             './tests/contract/InitParams.tvc',
             './tests/contract/InitParams.abi.json'
