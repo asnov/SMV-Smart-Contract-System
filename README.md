@@ -1,6 +1,26 @@
 # SMV-Smart-Contract-System
-This is a repo to take part in the **Free TON Contest: DGO SMV Smart Contract System**
+This is a repo to take part in the [Free TON Contest: DGO SMV Smart Contract System](https://forum.freeton.org/t/contest-proposal-dgo-smv-smart-contract-system/5481/19)
 
+## Team wanted  
+This is a big project but timeframe is very limited. So I am looking for other developers and Free TON specialists to join me in this project and share reward with me.  
+
+### Who is required  
+- Solidity developers with Free TON specialisation - 50% of reward;  
+- Front-end developer (TypeScript & Angular) - 20% of reward;  
+- Technical writer and workflow diagram creater - 10%;  
+- Manager - 10%;  
+- Tester - 10%;  
+  
+### Tools (and basic requirements for participants)  
+- yarn, node.js  
+- typescript, no JS! (but as soon as all JS is TS by definition so it should not be a big issue)  
+- unit-testing is must. So I'm trying [echpochmak](https://github.com/wintexpro/echpochmak) at least for integration- and e2e-testing. I'm still not sure whether it is suitable for unit-testing.  
+- git, github, PRs, code review, gitflow branching model  
+- tondev, tonos-cli, TON SDK, TON Solidity Compiler, TVM Linker, ton client ts  
+  
+Please, PM me @anovi if you want to participate.  
+  
+  
 ### Specification
 
 Requirements:
