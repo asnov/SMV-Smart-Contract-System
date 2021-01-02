@@ -4124,6 +4124,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
+"samples@https://github.com/tonlabs/samples.git":
+  version "0.0.0"
+  resolved "https://github.com/tonlabs/samples.git#bb27d50627fbd474186a59dfd0e1dd3a625fda56"
+
 sane@^4.0.3:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/sane/-/sane-4.1.0.tgz#ed881fd922733a6c461bc189dc2b6c006f3ffded"
@@ -4653,6 +4657,10 @@ ton-client-node-js@^0.28.0:
     node-fetch "^2.6.0"
     ton-client-js "^0"
     websocket "^1.0.28"
+
+"ton-labs-contracts@https://github.com/tonlabs/ton-labs-contracts.git":
+  version "0.0.0"
+  resolved "https://github.com/tonlabs/ton-labs-contracts.git#aafaa73a41d1cba3a7f9273297a110712aeef99e"
 
 tough-cookie@^2.3.3, tough-cookie@~2.5.0:
   version "2.5.0"
