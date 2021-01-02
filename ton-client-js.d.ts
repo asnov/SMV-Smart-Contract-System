@@ -1,13 +1,20 @@
+// adapted for TypeScript by https://github.com/asnov
+// original file https://github.com/tonlabs/ton-client-js/blob/master/types.js
+//
+// types.js
+// 	"name": "ton-client-js",
+// 	"version": "0.28.1",
+// 	"description": "TON Client for Java Script",
 // @flow
 
 import { Span, SpanContext } from 'opentracing';
-import type { Request } from './src/modules/TONQueriesModule';
+import type { Request } from 'ton-client-js/src/modules/TONQueriesModule';
 
 export type TONConfigData = {
     servers: string[],
     log_verbose?: boolean,
     err_log_verbose?: boolean,
-    tracer?: ?Object, // opentracing.Tracer
+    tracer?: Object | undefined, // opentracing.Tracer
     messageRetriesCount?: number,
     messageExpirationTimeout?: number,
     messageExpirationTimeoutGrowFactor?: number,
@@ -47,7 +54,7 @@ export interface TONCryptoBox {
     getEncryptionBox(params: {
         hdPath?: string,
         algorithm: TONEncryptionAlgorithm,
-        algorithmOptions: { [string]: any },
+        algorithmOptions: { [key: string]: any },
     }): Promise<TONEncryptionBox>,
 
     close(): Promise<void>,
@@ -334,8 +341,8 @@ export type TONContractLoadParams = {
 }
 
 export type TONContractLoadResult = {
-    id: ?string,
-    balanceGrams: ?string,
+    id: string | undefined,
+    balanceGrams: string | undefined,
 }
 
 export type TONContractDeployParams = {
@@ -1010,6 +1017,22 @@ export interface TONQueries {
     ): Promise<any>;
 
     close(): Promise<void>;
+
+    graphqlClientCreation: any;
+    graphqlClient: any;
+    graphqlClientConfig: any;
+    wsLink: any;
+    httpLink: any;
+    overrideWsUrl: any;
+    operationIdPrefix: string;
+    operationIdSuffix: number;
+    serverInfo: {
+        version: number;
+        supportsOperationId: boolean;
+        supportsAggregations: boolean;
+        supportsTime: boolean;
+        timeDelta: any;
+    };
 }
 
 
