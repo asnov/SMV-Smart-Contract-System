@@ -6,14 +6,25 @@
   "repository": "https://github.com/asnov/SMV-Smart-Contract-System.git",
   "author": "Alex&Team @anovi",
   "license": "GPL-3.0",
+  "engines": {
+    "node": "^14.8"
+  },
   "scripts": {
+    "prestart": "tsc src/index.ts",
+    "start": "node src/index.js",
     "pretest": "tsc tests/example.test.ts",
     "test": "echpochmak-cli test -p ./tests/example.test.js"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "echpochmak": "^0.2.13",
+  "dependencies": {
+    "@tonclient/core": "^1.2.1",
+    "@tonclient/lib-node": "^1.3.1",
+    "@tonclient/lib-web": "^1.2.1",
     "ton-client-js": "^0.28.1",
     "ton-client-node-js": "^0.28.0"
+  },
+  "devDependencies": {
+    "echpochmak": "^0.2.13",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
   }
 }

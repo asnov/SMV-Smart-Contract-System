@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "ts-node": {
+    "ignoreDiagnostics": [
+      "1308", // TS1308: 'await' expression is only allowed within an async function.
+      "2304"
+    ]
+  }
+}

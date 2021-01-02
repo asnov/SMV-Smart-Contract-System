@@ -20,8 +20,26 @@ This is a big project but timeframe is very limited. So I am looking for other d
   
 Please, PM me @anovi if you want to participate.  
   
+
+
+
+## Project prerequisites
+- [git](https://git-scm.com)  
+- [node.js](https://nodejs.org)  
+- [yarn](https://yarnpkg.com)  
+  `npm install -g yarn`  
   
-### Specification
+## Project install
+```
+git clone https://github.com/asnov/SMV-Smart-Contract-System.git  
+cd  SMV-Smart-Contract-System  
+yarn  
+yarn test  
+```
+  
+  
+  
+## Specification
 
 Requirements:
 * auto-tests designed as a smart contract or a script to test scenarios.
