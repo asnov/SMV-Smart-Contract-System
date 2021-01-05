@@ -13,7 +13,12 @@
     "prestart": "tsc src/index.ts",
     "start": "node src/index.js",
     "pretest": "tsc tests/example.test.ts",
-    "test": "echpochmak-cli test -p ./tests/example.test.js"
+    "test": "echpochmak-cli test -p ./tests/example.test.js",
+    "solc": "solc --output-dir",
+    "linker": "tvm_linker compile -o",
+    "tonos-cli": "tonos-cli",
+    "tonos-cli:genaddr": "tonos-cli genaddr --genkey",
+    "tonos-cli:setkey": "tonos-cli genaddr --setkey"
   },
   "dependencies": {
     "@tonclient/core": "^1.2.1",
