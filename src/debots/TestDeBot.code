@@ -1,0 +1,1180 @@
+.globl	constructor
+.public	constructor
+.type	constructor, @function
+GETGLOB 1
+ISNULL
+PUSHCONT {
+	CALL $c4_to_c7_with_init_storage$
+}
+IF
+;; constructor protection
+GETGLOB 6
+THROWIF 51
+PUSHINT 1
+SETGLOB 6
+;; end constructor protection
+ENDS
+ACCEPT
+CALL $c7_to_c4$
+TRUE
+SETGLOB 7
+
+.globl	fetch
+.public	fetch
+.type	fetch, @function
+GETGLOB 1
+ISNULL
+PUSHCONT {
+	CALL $c4_to_c7$
+}
+IF
+; Decode input parameters
+ENDS
+; modifier accept
+ACCEPT
+; function fetch
+;; ret param: contexts
+PUSHINT 0
+NEWDICT
+PAIR
+; expValue
+DUP
+; end expValue
+PUSHINT 0
+PUSHSLICE x48656c6c6f2c2076616c696461746f7221204920616d20746865204d61676973746572204c756469206465626f742e2049276c6c2068656c7020796f75206465706c6f7920796f7572206d756c74697369676e61747572652077616c6c65742e
+NEWC
+STSLICE
+ENDC
+PUSHINT 2
+NEWDICT
+PUSHSLICE x4465706c6f792077616c6c6574
+NEWC
+STSLICE
+ENDC
+PUSHSLICE x4e6f772069206e65656420746f206964656e7469667920796f7520696e204d61676973746572204c7564692047616d652e20456e74657220616e79206f6620796f757220637573746f6469616e206b65792066726f6d2076616c696461746f722077616c6c657420696e2067616d656e65742e
+NEWC
+STSLICE
+ENDC
+PUSHINT 254
+;; param: desc
+;; param: text
+;; param: to
+; function ActionPrint
+;; return
+;; push identifier desc
+PUSH S2
+;; push identifier text
+PUSH S2
+PUSHINT 5
+NEWC
+ENDC
+;; push identifier to
+PUSH S4
+;; push identifier empty
+GETGLOB 14
+TUPLE 6
+XCHG s3
+BLKDROP 3
+; end function ActionPrint
+UNTUPLE 6
+NEWC
+PUSH S6
+STREFR
+PUSH S5
+STREFR
+PUSH S4
+STUR 8
+PUSH S3
+STREFR
+PUSH S2
+STUR 8
+PUSH S1
+STREFR
+XCHG s6
+BLKDROP 6
+PUSHINT 0
+ROT
+PUSHINT 32
+DICTUSETB
+PUSHSLICE x51756974
+NEWC
+STSLICE
+ENDC
+PUSHSLICE x476f6f646279652c20636f6d6520616761696e207768656e20796f752061726520726561647921
+NEWC
+STSLICE
+ENDC
+PUSHINT 255
+;; param: desc
+;; param: text
+;; param: to
+; function ActionPrint
+;; return
+;; push identifier desc
+PUSH S2
+;; push identifier text
+PUSH S2
+PUSHINT 5
+NEWC
+ENDC
+;; push identifier to
+PUSH S4
+;; push identifier empty
+GETGLOB 14
+TUPLE 6
+XCHG s3
+BLKDROP 3
+; end function ActionPrint
+UNTUPLE 6
+NEWC
+PUSH S6
+STREFR
+PUSH S5
+STREFR
+PUSH S4
+STUR 8
+PUSH S3
+STREFR
+PUSH S2
+STUR 8
+PUSH S1
+STREFR
+XCHG s6
+BLKDROP 6
+PUSHINT 1
+ROT
+PUSHINT 32
+DICTUSETB
+PAIR
+TUPLE 3
+;; array.push(..)
+UNTUPLE 3
+NEWC
+PUSH S3
+STUR 8
+PUSH S2
+STREFR
+PUSH S1
+UNPAIR
+ROTREV
+STUR 32
+STDICT
+XCHG s3
+BLKDROP 3
+SWAP
+UNPAIR
+PUSH S1
+INC
+XCHG s3
+ROTREV
+PUSHINT 32
+DICTUSETB
+PAIR
+; colValue
+NIP
+; end colValue
+;; returning named params
+;; emitting 1 value(s)
+PUSH S1
+EQINT -1
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 96
+	STZEROES
+	STSLICECONST 0
+	STSLICECONST 0
+	STSLICECONST xa5b934ca
+	PUSH S1
+	UNPAIR
+	XCHG s2
+	STU 32
+	STDICT
+	ENDC
+	PUSHINT 1
+	SENDRAWMSG
+}
+IF
+DROP
+; end function fetch
+; end modifier accept
+CALL $c7_to_c4$
+TRUE
+SETGLOB 7
+
+.globl	fetch_internal
+.type	fetch_internal, @function
+; modifier accept
+ACCEPT
+; function fetch
+;; ret param: contexts
+PUSHINT 0
+NEWDICT
+PAIR
+; expValue
+DUP
+; end expValue
+PUSHINT 0
+PUSHSLICE x48656c6c6f2c2076616c696461746f7221204920616d20746865204d61676973746572204c756469206465626f742e2049276c6c2068656c7020796f75206465706c6f7920796f7572206d756c74697369676e61747572652077616c6c65742e
+NEWC
+STSLICE
+ENDC
+PUSHINT 2
+NEWDICT
+PUSHSLICE x4465706c6f792077616c6c6574
+NEWC
+STSLICE
+ENDC
+PUSHSLICE x4e6f772069206e65656420746f206964656e7469667920796f7520696e204d61676973746572204c7564692047616d652e20456e74657220616e79206f6620796f757220637573746f6469616e206b65792066726f6d2076616c696461746f722077616c6c657420696e2067616d656e65742e
+NEWC
+STSLICE
+ENDC
+PUSHINT 254
+;; param: desc
+;; param: text
+;; param: to
+; function ActionPrint
+;; return
+;; push identifier desc
+PUSH S2
+;; push identifier text
+PUSH S2
+PUSHINT 5
+NEWC
+ENDC
+;; push identifier to
+PUSH S4
+;; push identifier empty
+GETGLOB 14
+TUPLE 6
+XCHG s3
+BLKDROP 3
+; end function ActionPrint
+UNTUPLE 6
+NEWC
+PUSH S6
+STREFR
+PUSH S5
+STREFR
+PUSH S4
+STUR 8
+PUSH S3
+STREFR
+PUSH S2
+STUR 8
+PUSH S1
+STREFR
+XCHG s6
+BLKDROP 6
+PUSHINT 0
+ROT
+PUSHINT 32
+DICTUSETB
+PUSHSLICE x51756974
+NEWC
+STSLICE
+ENDC
+PUSHSLICE x476f6f646279652c20636f6d6520616761696e207768656e20796f752061726520726561647921
+NEWC
+STSLICE
+ENDC
+PUSHINT 255
+;; param: desc
+;; param: text
+;; param: to
+; function ActionPrint
+;; return
+;; push identifier desc
+PUSH S2
+;; push identifier text
+PUSH S2
+PUSHINT 5
+NEWC
+ENDC
+;; push identifier to
+PUSH S4
+;; push identifier empty
+GETGLOB 14
+TUPLE 6
+XCHG s3
+BLKDROP 3
+; end function ActionPrint
+UNTUPLE 6
+NEWC
+PUSH S6
+STREFR
+PUSH S5
+STREFR
+PUSH S4
+STUR 8
+PUSH S3
+STREFR
+PUSH S2
+STUR 8
+PUSH S1
+STREFR
+XCHG s6
+BLKDROP 6
+PUSHINT 1
+ROT
+PUSHINT 32
+DICTUSETB
+PAIR
+TUPLE 3
+;; array.push(..)
+UNTUPLE 3
+NEWC
+PUSH S3
+STUR 8
+PUSH S2
+STREFR
+PUSH S1
+UNPAIR
+ROTREV
+STUR 32
+STDICT
+XCHG s3
+BLKDROP 3
+SWAP
+UNPAIR
+PUSH S1
+INC
+XCHG s3
+ROTREV
+PUSHINT 32
+DICTUSETB
+PAIR
+; colValue
+NIP
+; end colValue
+;; returning named params
+TUPLE 1
+SETGLOB 8
+; end function fetch
+; end modifier accept
+GETGLOB 8
+UNTUPLE 1
+
+.globl	getVersion
+.public	getVersion
+.type	getVersion, @function
+GETGLOB 1
+ISNULL
+PUSHCONT {
+	CALL $c4_to_c7$
+}
+IF
+; Decode input parameters
+ENDS
+; modifier accept
+ACCEPT
+; function getVersion
+;; ret param: name
+NEWC
+ENDC
+;; ret param: semver
+PUSHINT 0
+; expValue
+; end expValue
+PUSHSLICE x54657374204465426f74
+NEWC
+STSLICE
+ENDC
+; colValue
+POP s2
+; end colValue
+; expValue
+; end expValue
+PUSHINT 257
+; colValue
+NIP
+; end colValue
+;; returning named params
+;; emitting 2 value(s)
+PUSH S2
+EQINT -1
+PUSHCONT {
+	PUSH S4
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 96
+	STZEROES
+	STSLICECONST 0
+	STSLICECONST 0
+	STSLICECONST xb541576f
+	PUSH S2
+	STREFR
+	PUSH S1
+	STUR 24
+	ENDC
+	PUSHINT 1
+	SENDRAWMSG
+}
+IF
+DROP2
+; end function getVersion
+; end modifier accept
+CALL $c7_to_c4$
+TRUE
+SETGLOB 7
+
+.globl	getVersion_internal
+.type	getVersion_internal, @function
+; modifier accept
+ACCEPT
+; function getVersion
+;; ret param: name
+NEWC
+ENDC
+;; ret param: semver
+PUSHINT 0
+; expValue
+; end expValue
+PUSHSLICE x54657374204465426f74
+NEWC
+STSLICE
+ENDC
+; colValue
+POP s2
+; end colValue
+; expValue
+; end expValue
+PUSHINT 257
+; colValue
+NIP
+; end colValue
+;; returning named params
+TUPLE 2
+SETGLOB 8
+; end function getVersion
+; end modifier accept
+GETGLOB 8
+UNTUPLE 2
+
+.globl	quit
+.public	quit
+.type	quit, @function
+GETGLOB 1
+ISNULL
+PUSHCONT {
+	CALL $c4_to_c7$
+}
+IF
+; Decode input parameters
+ENDS
+; modifier accept
+ACCEPT
+; function quit
+; end function quit
+; end modifier accept
+CALL $c7_to_c4$
+TRUE
+SETGLOB 7
+
+.globl	quit_internal
+.type	quit_internal, @function
+; modifier accept
+ACCEPT
+; function quit
+; end function quit
+; end modifier accept
+
+.globl	getErrorDescription
+.public	getErrorDescription
+.type	getErrorDescription, @function
+; Decode input parameters
+; Decode error
+LDU 32
+ENDS
+;; param: error
+; function getErrorDescription
+;; ret param: desc
+NEWC
+ENDC
+PUSHCONT {
+	;; if
+	;; push identifier error
+	PUSH S1
+	EQINT 51
+	PUSHCONT {
+		;; return
+		DROP2
+		PUSHSLICE x436f6e7374727563746f722077617320616c72656164792063616c6c6564
+		NEWC
+		STSLICE
+		ENDC
+		RET
+	}
+	IFJMP
+	;; end if
+	;; return
+	DROP2
+	PUSHSLICE x756e6b6e6f776e206572726f72
+	NEWC
+	STSLICE
+	ENDC
+}
+CALLX
+;; emitting 1 value(s)
+PUSH S1
+EQINT -1
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 96
+	STZEROES
+	STSLICECONST 0
+	STSLICECONST 0
+	STSLICECONST xcabea99b
+	PUSH S1
+	STREFR
+	ENDC
+	PUSHINT 1
+	SENDRAWMSG
+}
+IF
+DROP
+; end function getErrorDescription
+PUSHCONT {
+	CALL $c7_to_c4$
+}
+IF
+TRUE
+SETGLOB 7
+
+.globl	getErrorDescription_internal
+.type	getErrorDescription_internal, @function
+;; param: error
+; function getErrorDescription
+;; ret param: desc
+NEWC
+ENDC
+;; if
+;; push identifier error
+PUSH S1
+EQINT 51
+PUSHCONT {
+	;; return
+	DROP2
+	PUSHSLICE x436f6e7374727563746f722077617320616c72656164792063616c6c6564
+	NEWC
+	STSLICE
+	ENDC
+	RET
+}
+IFJMP
+;; end if
+;; return
+DROP2
+PUSHSLICE x756e6b6e6f776e206572726f72
+NEWC
+STSLICE
+ENDC
+; end function getErrorDescription
+
+.globl	init_internal
+.type	init_internal, @function
+;; param: options
+;; param: debotAbi
+;; param: targetAbi
+;; param: targetAddr
+; function init
+;; if
+;; push identifier options
+PUSH S3
+PUSHINT 1
+;; &
+AND
+PUSHCONT {
+	; expValue
+	; end expValue
+	;; push identifier debotAbi
+	PUSH S2
+	; colValue
+	SETGLOB 11
+	; end colValue
+}
+IF
+;; end if
+;; if
+;; push identifier options
+PUSH S3
+PUSHINT 2
+;; &
+AND
+PUSHCONT {
+	; expValue
+	; end expValue
+	;; push identifier targetAbi
+	PUSH S1
+	; colValue
+	SETGLOB 12
+	; end colValue
+}
+IF
+;; end if
+;; if
+;; push identifier options
+PUSH S3
+PUSHINT 4
+;; &
+AND
+PUSHCONT {
+	; expValue
+	; end expValue
+	;; push identifier targetAddr
+	DUP
+	; colValue
+	SETGLOB 13
+	; end colValue
+}
+IF
+;; end if
+; expValue
+; end expValue
+;; push identifier options
+PUSH S3
+; colValue
+SETGLOB 10
+; end colValue
+BLKDROP 4
+; end function init
+
+.globl	getDebotOptions
+.public	getDebotOptions
+.type	getDebotOptions, @function
+GETGLOB 1
+ISNULL
+PUSHCONT {
+	CALL $c4_to_c7$
+}
+IF
+; Decode input parameters
+ENDS
+; function getDebotOptions
+;; ret param: options
+PUSHINT 0
+;; ret param: debotAbi
+NEWC
+ENDC
+;; ret param: targetAbi
+NEWC
+ENDC
+;; ret param: targetAddr
+PUSHSLICE x8000000000000000000000000000000000000000000000000000000000000000001_
+;; push identifier m_debotAbi
+GETGLOB 11
+ISNULL
+NOT
+PUSHCONT {
+	;; push identifier m_debotAbi
+	GETGLOB 11
+	DUP
+	ISNULL
+	THROWIF 63
+}
+PUSHCONT {
+	NEWC
+	ENDC
+}
+IFELSE
+; expValue
+; end expValue
+; colValue
+POP s3
+; end colValue
+;; push identifier m_targetAbi
+GETGLOB 12
+ISNULL
+NOT
+PUSHCONT {
+	;; push identifier m_targetAbi
+	GETGLOB 12
+	DUP
+	ISNULL
+	THROWIF 63
+}
+PUSHCONT {
+	NEWC
+	ENDC
+}
+IFELSE
+; expValue
+; end expValue
+; colValue
+POP s2
+; end colValue
+;; push identifier m_target
+GETGLOB 13
+ISNULL
+NOT
+PUSHCONT {
+	;; push identifier m_target
+	GETGLOB 13
+	DUP
+	ISNULL
+	THROWIF 63
+}
+PUSHCONT {
+	PUSHSLICE x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+IFELSE
+; expValue
+; end expValue
+; colValue
+NIP
+; end colValue
+; expValue
+; end expValue
+;; push identifier m_options
+GETGLOB 10
+; colValue
+POP s4
+; end colValue
+;; returning named params
+;; emitting 4 value(s)
+PUSH S4
+EQINT -1
+PUSHCONT {
+	PUSH S6
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 96
+	STZEROES
+	STSLICECONST 0
+	STSLICECONST 0
+	STSLICECONST xfdecd0db
+	PUSH S4
+	STUR 8
+	PUSH S3
+	STREFR
+	PUSH S2
+	STREFR
+	PUSH S1
+	STSLICER
+	ENDC
+	PUSHINT 1
+	SENDRAWMSG
+}
+IF
+BLKDROP 4
+; end function getDebotOptions
+CALL $c7_to_c4$
+TRUE
+SETGLOB 7
+
+.globl	getDebotOptions_internal
+.type	getDebotOptions_internal, @function
+; function getDebotOptions
+;; ret param: options
+PUSHINT 0
+;; ret param: debotAbi
+NEWC
+ENDC
+;; ret param: targetAbi
+NEWC
+ENDC
+;; ret param: targetAddr
+PUSHSLICE x8000000000000000000000000000000000000000000000000000000000000000001_
+;; push identifier m_debotAbi
+GETGLOB 11
+ISNULL
+NOT
+PUSHCONT {
+	;; push identifier m_debotAbi
+	GETGLOB 11
+	DUP
+	ISNULL
+	THROWIF 63
+}
+PUSHCONT {
+	NEWC
+	ENDC
+}
+IFELSE
+; expValue
+; end expValue
+; colValue
+POP s3
+; end colValue
+;; push identifier m_targetAbi
+GETGLOB 12
+ISNULL
+NOT
+PUSHCONT {
+	;; push identifier m_targetAbi
+	GETGLOB 12
+	DUP
+	ISNULL
+	THROWIF 63
+}
+PUSHCONT {
+	NEWC
+	ENDC
+}
+IFELSE
+; expValue
+; end expValue
+; colValue
+POP s2
+; end colValue
+;; push identifier m_target
+GETGLOB 13
+ISNULL
+NOT
+PUSHCONT {
+	;; push identifier m_target
+	GETGLOB 13
+	DUP
+	ISNULL
+	THROWIF 63
+}
+PUSHCONT {
+	PUSHSLICE x8000000000000000000000000000000000000000000000000000000000000000001_
+}
+IFELSE
+; expValue
+; end expValue
+; colValue
+NIP
+; end colValue
+; expValue
+; end expValue
+;; push identifier m_options
+GETGLOB 10
+; colValue
+POP s4
+; end colValue
+;; returning named params
+; end function getDebotOptions
+
+.globl	c7_to_c4
+.type	c7_to_c4, @function
+GETGLOB 2
+NEWC
+STU 256
+GETGLOB 3
+STUR 64
+GETGLOB 6
+STUR 1
+GETGLOB 10
+GETGLOB 11
+GETGLOB 12
+GETGLOB 13
+GETGLOB 14
+REVERSE 6, 0
+STU 8
+SWAP
+DUP
+ISNULL
+NOT
+PUSHCONT {
+	NEWC
+	STREF
+	SWAP
+	STSLICECONST 1
+	STBREF
+}
+PUSHCONT {
+	DROP
+	STSLICECONST 0
+}
+IFELSE
+SWAP
+DUP
+ISNULL
+NOT
+PUSHCONT {
+	NEWC
+	STREF
+	SWAP
+	STSLICECONST 1
+	STBREF
+}
+PUSHCONT {
+	DROP
+	STSLICECONST 0
+}
+IFELSE
+SWAP
+DUP
+ISNULL
+NOT
+PUSHCONT {
+	NEWC
+	STSLICE
+	SWAP
+	STSLICECONST 1
+	STBREF
+}
+PUSHCONT {
+	DROP
+	STSLICECONST 0
+}
+IFELSE
+STREF
+ENDC
+POP C4
+
+.globl	c4_to_c7
+.type	c4_to_c7, @function
+PUSHROOT
+CTOS        ; c4
+LDU 256      ; pubkey c4
+LDU 64      ; pubkey timestamp c4
+LDU 1       ; pubkey [timestamp] constructor_flag memory
+LDU 8
+LDOPTREF
+SWAP
+DUP
+ISNULL
+PUSHCONT {
+	CTOS
+	PLDREF
+}
+IFNOT
+SETGLOB 11
+LDOPTREF
+SWAP
+DUP
+ISNULL
+PUSHCONT {
+	CTOS
+	PLDREF
+}
+IFNOT
+SETGLOB 12
+LDOPTREF
+SWAP
+DUP
+ISNULL
+PUSHCONT {
+	CTOS
+	LDMSGADDR
+	DROP
+}
+IFNOT
+SETGLOB 13
+PLDREF
+SETGLOB 14
+SETGLOB 10
+TRUE
+SETGLOB 1   ; pubkey [timestamp] constructor_flag
+SETGLOB 6   ; pubkey [timestamp]
+SETGLOB 3   ; D
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS        ; c4
+DUP        ; c4 c4
+SBITS      ; c4 bits
+GTINT 1    ; c4 bits>1
+PUSHCONT {
+	LDU 256      ; pubkey c4
+	LDU 64      ; pubkey timestamp c4
+	LDU 1       ; pubkey [timestamp] constructor_flag memory
+	LDU 8
+	LDOPTREF
+	SWAP
+	DUP
+	ISNULL
+	PUSHCONT {
+		CTOS
+		PLDREF
+	}
+	IFNOT
+	SETGLOB 11
+	LDOPTREF
+	SWAP
+	DUP
+	ISNULL
+	PUSHCONT {
+		CTOS
+		PLDREF
+	}
+	IFNOT
+	SETGLOB 12
+	LDOPTREF
+	SWAP
+	DUP
+	ISNULL
+	PUSHCONT {
+		CTOS
+		LDMSGADDR
+		DROP
+	}
+	IFNOT
+	SETGLOB 13
+	PLDREF
+	SETGLOB 14
+	SETGLOB 10
+	TRUE
+	SETGLOB 1   ; pubkey [timestamp] constructor_flag
+	SETGLOB 6   ; pubkey [timestamp]
+	SETGLOB 3   ; D
+	SETGLOB 2
+}
+PUSHCONT {
+	PLDDICT   ; D
+	; init m_options
+	PUSHINT 0
+	SETGLOB 10
+	; init m_debotAbi
+	NULL
+	SETGLOB 11
+	; init m_targetAbi
+	NULL
+	SETGLOB 12
+	; init m_target
+	NULL
+	SETGLOB 13
+	; init empty
+	NEWC
+	ENDC
+	SETGLOB 14
+	; set contract pubkey
+	PUSHINT 0
+	SWAP
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+	PUSHINT 0 ; constructor_flag
+	SETGLOB 6
+	TRUE
+	SETGLOB 1
+}
+IFELSE
+
+.internal-alias :main_internal,        0
+.internal	:main_internal
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Function: main_internal
+;; param: contract_balance
+;; param: msg_balance
+;; param: int_msg_info
+;; param: msg_body_slice
+PUSHINT 0  ; main_external trans id
+PUSH S2
+CTOS
+PLDU 4
+MODPOW2 1
+IFRET
+PUSH S1    ; body
+SEMPTY     ; isEmpty
+IFRET
+PUSH S1 ; body
+LDU 32  ; funcId body'
+PUSH S1 ; funcId body' funcId
+IFNOTRET
+PUSH S1 ; funcId body' funcId
+LESSINT 3            ; funcId body' funcId<3
+PUSH S2              ; funcId body' funcId<3 funcId
+PUSHINT 4294967293   ; funcId body' funcId<3 funcId 4294967293
+GREATER              ; funcId body' funcId<3 funcId>4294967293
+OR                   ; funcId body' funcId<3||funcId>4294967293
+PUSHCONT {
+	THROW 60
+}
+IFJMP
+SWAP  ; body' funcId
+CALL 1
+GETGLOB 7
+ISNULL
+PUSHCONT {
+	THROW 60
+}
+IF
+
+.internal-alias :main_external,        -1
+.internal	:main_external
+PUSHINT -1 ; main_external trans id
+PUSH S1
+CALL $c4_to_c7_with_init_storage$
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHINT 512
+	LDSLICEX ; signatureSlice msgSlice
+	DUP      ; signatureSlice msgSlice msgSlice
+	HASHSU   ; signatureSlice msgSlice hashMsgSlice
+	SWAP  ; signatureSlice hashMsgSlice msgSlice
+	LDU 1 ; signatureSlice hashMsgSlice havePubkey msgSlice
+	SWAP  ; signatureSlice hashMsgSlice msgSlice havePubkey
+	PUSHCONT {
+		LDU 256       ; signatureSlice hashMsgSlice pubkey msgSlice
+		XCHG s3
+		SWAP
+	}
+	PUSHCONT {
+		XCHG s2
+		GETGLOB 2
+	}
+	IFELSE
+	CHKSIGNU      ; msgSlice isSigned
+	THROWIFNOT 40 ; msgSlice
+}
+PUSHCONT {
+	LDU 1      ; havePubkey msgSlice
+	SWAP       ; msgSlice havePubkey
+	THROWIF 58 ; msgSlice
+}
+IFELSE
+LDU 64                         ; timestamp msgSlice
+SWAP                           ; msgSlice timestamp
+CALL $replay_protection_macro$ ; msgSlice
+LDU 32  ; expireAt msgSlice
+SWAP    ; msgSlice expireAt
+NOW     ; msgSlice expireAt now
+GREATER ; msgSlice expireAt>now
+THROWIFNOT 57
+LDU  32 ; funcId body
+PUSH S1 ; funcId body funcId
+LESSINT 3            ; funcId body' funcId<3
+PUSH S2              ; funcId body' funcId<3 funcId
+PUSHINT 4294967293   ; funcId body' funcId<3 funcId 4294967293
+GREATER              ; funcId body' funcId<3 funcId>4294967293
+OR                   ; funcId body' funcId<3||funcId>4294967293
+PUSHCONT {
+	THROW 60
+}
+IFJMP
+SWAP    ; body funcId
+CALL 1
+GETGLOB 7
+ISNULL
+PUSHCONT {
+	THROW 60
+}
+IF
+
