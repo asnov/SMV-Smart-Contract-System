@@ -108,3 +108,6 @@ dist
 
 # sensitive data
 keys/
+
+# temp files
+temp/
