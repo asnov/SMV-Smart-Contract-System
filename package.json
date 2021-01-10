@@ -10,7 +10,7 @@
     "node": "^14.8"
   },
   "scripts": {
-    "clang++ -o": "clang++ -o",
+    "clang++ -o": "clang++ -export-json-abi -o",
     "prestart": "tsc src/index.ts",
     "start": "node src/index.js",
     "pretest": "tsc tests/example.test.ts",
