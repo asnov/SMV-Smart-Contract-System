@@ -50,7 +50,7 @@ public:
     //  (up to start balance of the contract)
     if constexpr (Internal) {
       auto value_gr = int_value();
-      tvm_rawreserve(std::max(start_balance_.get(), tvm_balance() - value_gr()), RESERVE_UP_TO);
+      tvm_rawreserve(std::max(start_balance_.get(), tvm_balance() - value_gr()), rawreserve_flag::up_to);
     }
 
     auto [wallet_init, dest] = calc_wallet_init(workchain_id, pubkey);
@@ -66,7 +66,7 @@ public:
   address deployEmptyWallet(int8 workchain_id, uint256 pubkey, WalletGramsType grams) {
     // This protects from spending root balance to deploy message
     auto value_gr = int_value();
-    tvm_rawreserve(std::max(start_balance_.get(), tvm_balance() - value_gr()), RESERVE_UP_TO);
+    tvm_rawreserve(std::max(start_balance_.get(), tvm_balance() - value_gr()), rawreserve_flag::up_to);
 
     auto [wallet_init, dest] = calc_wallet_init(workchain_id, pubkey);
     handle<IAuthWallet> dest_handle(dest);
