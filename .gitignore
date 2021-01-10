@@ -111,3 +111,4 @@ keys/
 
 # temp files
 temp/
+cmake-build-debug/
