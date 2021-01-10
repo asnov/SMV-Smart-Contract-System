@@ -6,6 +6,9 @@
 #include <tvm/contract_handle.hpp>
 #include <tvm/default_support_functions.hpp>
 
+#include <tvm/sequence.hpp>
+#include <tvm/schema/message.hpp>
+
 using namespace tvm;
 using namespace schema;
 

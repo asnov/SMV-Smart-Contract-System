@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(/usr/local/include)
 include_directories(/usr/local/include/tvm)
+include_directories(/usr/local/include/tvm/schema)
 include_directories(/usr/local/include/sha256_literal)
 
 include_directories(tonlabs/tokens-auth)

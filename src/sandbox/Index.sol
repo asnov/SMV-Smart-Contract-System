@@ -1,12 +1,12 @@
 pragma solidity >= 0.6.0;
 
-import "IAuthRoot.sol";
-import "IAuthWallet.sol";
+import "./IAuthRoot.sol";
+import "./IAuthWallet.sol";
 
 contract Index {
 
-    IAuthRoot _root;
-    IAuthWallet _wallet;
+    IAuthRoot public _root;
+    IAuthWallet public _wallet;
 
     // Modifier that allows public function to accept all external calls.
     modifier alwaysAccept {
@@ -19,22 +19,28 @@ contract Index {
         _;
     }
 
-    constructor(address root, address wallet) public acceptOnlyOwner {
-        _root = root;
-        _wallet = wallet;
+    constructor() public acceptOnlyOwner {
     }
 
-    function action() {
-        _root.deny();
+    function setRoot(address root) public acceptOnlyOwner {
+        _root = IAuthRoot(root);
     }
 
-    function sendAllMoney(address dest_addr) public onlyOwner {
+    function getName() public acceptOnlyOwner /*returns (bytes value)*/ {
+        _root.getName();
+    }
+
+    function action() public {
+//        _root.deny(dest, rightId, grams);
+    }
+
+    function sendAllMoney(address dest_addr) public acceptOnlyOwner {
         selfdestruct(dest_addr);
         tvm.exit();
         // I doubt we need it
     }
 
-    function unique(TvmCell uniquec) public view onlyOwner {
+    function unique(TvmCell uniquec) public view acceptOnlyOwner {
         tvm.accept();
         // Runtime function that creates an output action that would change this
         // smart contract code to that given by cell newcode.

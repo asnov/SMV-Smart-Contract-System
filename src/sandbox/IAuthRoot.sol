@@ -2,57 +2,65 @@ pragma solidity >= 0.6.0;
 
 interface IAuthRoot {
 
+    function constructor1(
+        bytes name,
+        bytes symbol,
+        uint256 root_public_key,
+        uint256 root_owner,
+        TvmCell wallet_code
+    ) external;
+
     function deployWallet(
         uint32 _answer_id,
         int8 workchain_id,
         uint256 pubkey,
         uint256 rightId,
         uint256 grams
-    ) public returns (address value0);
+    ) external returns (address value0);
 
     function deployEmptyWallet(
         uint32 _answer_id,
         int8 workchain_id,
         uint256 pubkey,
         uint256 grams
-    ) public returns (address value0);
+    ) external returns (address value0);
 
     function grant(
         address dest,
         uint256 rightId,
         uint256 grams
-    ) public;
+    ) external;
 
     function deny(
         address dest,
         uint256 rightId,
         uint256 grams
-    ) public;
+    ) external;
 
     function destroyWallet(
         address dest,
         uint256 grams
-    ) public;
+    ) external;
 
     function destroyRoot(
         address dest
-    ) public;
+    ) external;
 
     function getName(
-    ) public returns (bytes value0);
+    ) external returns (bytes value0);
 
     function getSymbol(
-    ) public returns (bytes value0);
+    ) external returns (bytes value0);
 
     function getRootKey(
-    ) public returns (uint256 value0);
+    ) external returns (uint256 value0);
 
     function getWalletCode(
-    ) public returns (cell value0);
+    ) external returns (TvmCell value0);
 
     function getWalletAddress(
         int8 workchain_id,
         uint256 pubkey
-    ) public returns (address value0);
+    ) external returns (address value0);
 
 }

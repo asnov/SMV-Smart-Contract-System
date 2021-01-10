@@ -4,35 +4,35 @@ interface IAuthWallet {
 
     function accept(
         uint256 rightId
-    ) public;
+    ) external;
 
     function deny(
         uint256 rightId
-    ) public;
+    ) external;
 
     function destroy(
-    ) public;
+    ) external;
 
     function getName(
-    ) public returns (bytes value0);
+    ) external returns (bytes value0);
 
     function getSymbol(
-    ) public returns (bytes value0);
+    ) external returns (bytes value0);
 
     function getWalletKey(
-    ) public returns (uint256 value0);
+    ) external returns (uint256 value0);
 
     function getRootAddress(
-    ) public returns (address value0);
+    ) external returns (address value0);
 
     function getRightsCount(
-    ) public returns (uint256 value0);
+    ) external returns (uint256 value0);
 
     function getRightByIndex(
         uint256 index
-    ) public returns (uint256 value0);
+    ) external returns (uint256 value0);
 
     function getRights(
-    ) public returns (uint256[] value0);
+    ) external returns (uint256[] value0);
 
 }
